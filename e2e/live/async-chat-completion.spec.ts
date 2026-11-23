@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { it } from 'node:test';
 import { asyncCompletionContract, createClients, pollAsyncCompletion } from './helpers.ts';
 
-it('matches published async chat completion lifecycle', { timeout: 180_000 }, async () => {
+it('matches published async chat completion lifecycle', { timeout: 720_000 }, async () => {
   const { candidate, published } = createClients();
   const request = {
     request: {

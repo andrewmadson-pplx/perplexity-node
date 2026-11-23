@@ -224,7 +224,8 @@ export async function pollAsyncCompletion(initial: unknown, retrieve: (id: strin
   const id = asyncCompletionID(initial);
   let completion = initial;
 
-  for (let attempt = 0; attempt < 120; attempt += 1) {
+  // sonar-deep-research usually needs more than two minutes to finish.
+  for (let attempt = 0; attempt < 600; attempt += 1) {
     const status = asyncCompletionStatus(completion);
     if (status === 'COMPLETED') {
       return completion;
