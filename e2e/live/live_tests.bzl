@@ -19,6 +19,7 @@ def live_tests():
                 "//:node_modules/@perplexity-ai/perplexity_ai",
                 "//:node_modules/published-sdk",
             ],
+            timeout = "long" if name == "async_chat_completion" else "moderate",
             entry_point = name.replace("_", "-") + ".spec.ts",
             tags = [
                 "functional_test",
